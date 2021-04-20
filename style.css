@@ -1,10 +1,12 @@
-html {
-  height: 100%;
-}
-
+html,
 body {
   height: 100%;
   width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
   background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
   display: flex;
   justify-content: center;
@@ -33,15 +35,33 @@ button:focus {
   width: 70%;
   min-height: 70%;
   background-color: #fff;
-  background-image: url(images/illustration-box-desktop.svg),
-    url(images/illustration-woman-online-desktop.svg),
-    url(images/bg-pattern-desktop.svg);
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: -95px 180px, -75px 50px, -570px -325px;
+  background-image: url(images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: -583px -310px;
   border-radius: 15px;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  position: relative;
+}
+
+.image-wrapper {
+  overflow: hidden;
+}
+
+img.woman-desktop {
+  position: relative;
+  top: 5%;
+  left: -93px;
+}
+
+img.box-desktop {
+  position: absolute;
+  top: 40%;
+  left: -93px;
+}
+
+img.woman-mobile {
+  display: none;
 }
 
 .faq-section {
@@ -94,34 +114,37 @@ button:focus {
 }
 
 @media screen and (max-width: 768px) {
-  /**
-  .overflowImage {
-    position: relative;
-  }
-
-  .overflowImage::before {
-    width: 90%;
-    height: 150%;
-    content: " ";
-    position: absolute;
-    z-index: 1;
-    background-image: url(images/illustration-woman-online-mobile.svg);
-    background-repeat: no-repeat;
-    background-position: 40% 20px;
-  }*/
-
   .card {
     width: 90%;
     min-height: 60%;
     background-color: #fff;
-    background-image: url(images/illustration-woman-online-mobile.svg),
-      url(images/bg-pattern-mobile.svg);
-    background-repeat: no-repeat, no-repeat;
-    background-position: center -100px, center top;
+    background-image: url(images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: center top;
     border-radius: 15px;
-    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+  }
+
+  img.woman-desktop {
+    display: none;
+  }
+
+  img.box-desktop {
+    display: none;
+  }
+
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  img.woman-mobile {
+    display: block;
+    position: absolute;
+    top: -108px;
   }
 
   .faq-section {
